@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ """
+from logging import exception
 from models.base_model import BaseModel
 import unittest
 import datetime
@@ -24,7 +25,7 @@ class test_basemodel(unittest.TestCase):
     def tearDown(self):
         try:
             os.remove('file.json')
-        except:
+        except OSError():
             pass
 
     def test_default(self):
